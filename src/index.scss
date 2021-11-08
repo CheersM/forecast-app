@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Varela Round', sans-serif;
+}
+
+a {
+  color: #000;
+
+  &:active {
+    color: lighten($color: #000000, $amount: 80%);
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 900px;
+  background-image: url('/assets/weather.png');
+  background-size: cover;
+  border-radius: 20px;
+  height: 900px;
+
+  .search {
+    margin: 0 auto;
+    width: 350px;
+    margin-top: 20px;
+    border: 1px solid #f3f3f3;
+    border-radius: 15px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      border: 0;
+      padding: 13px;
+      font-size: 16px;
+      width: 300px;
+      background: none;
+
+      &:active,
+      &:hover,
+      &:focus {
+        outline: 0;
+        outline-offset: 0;
+      }
+    }
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  svg {
+    opacity: 0.4;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      path {
+        fill: rgb(134, 133, 133);
+      }
+    }
+  }
+
+  .card-block {
+    box-shadow: 0px 10px 20px rgb(134, 133, 133);
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+
+    &__flex {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 28px;
+        margin-right: 30px;
+      }
+
+      h3 {
+        flex: 1;
+        font-size: 30px;
+        margin-right: 15px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      margin-right: 25px;
+    }
+  }
+}
+.button {
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 15px;
+  transition: background-color 0.2s ease-in-out;
+  opacity: 0.7;
+
+  span {
+    margin-right: 10px;
+  }
+
+  svg {
+    padding-right: 10px;
+    opacity: 1;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    svg {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: 30px;
+      color: rgb(23, 37, 37);
+    }
+  }
+
+  .my_cities {
+    a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      font-size: 22px;
+      margin-right: 5px;
+    }
+
+    img {
+      animation: spin 5s linear 0s infinite;
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.current-town {
+  width: 700px;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px rgb(250, 246, 246);
+
+  &__top {
+    height: 60px;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Recursive', sans-serif;
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      color: whitesmoke;
+      margin: 10px 0px 0px 10px;
+      font-size: 25px;
+      font-family: 'Recursive', sans-serif;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 18px;
+      }
+    }
+
+    .refresh {
+      margin-top: 15px;
+
+      svg {
+        width: 35px;
+        height: 35px;
+        color: #fff;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    .day {
+      padding: 15px;
+      color: whitesmoke;
+      font-family: 'Recursive', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .temp {
+      padding: 15px;
+      color: whitesmoke;
+      font-family: 'Recursive', sans-serif;
+      font-size: 18px;
+    }
+
+    .sunrise-sunset {
+      padding: 15px;
+      color: whitesmoke;
+      font-family: 'Recursive', sans-serif;
+      font-size: 16px;
+    }
+
+    .description {
+      padding: 15px;
+      color: whitesmoke;
+      font-family: 'Recursive', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+}
+
+.cities-page {
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.example {
+  margin: 20px 0;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.forecast {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 38px;
+  }
+
+  &__data {
+    width: 50%;
+    font-size: 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .temp {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    div {
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      b {
+        flex: 1;
+      }
+    }
+  }
+
+  .dayForecast {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__wrapper {
+      display: flex;
+      margin: 10px;
+
+      .dayForecast-block {
+        border: 1px solid rgba(58, 55, 250, 0.5);
+        border-radius: 15px;
+        padding: 20px 15px;
+        margin: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60px;
+        justify-content: space-between;
+        box-shadow: 0px 10px 20px rgb(134, 133, 133);
+
+        h3 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.empty {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
