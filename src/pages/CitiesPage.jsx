@@ -56,7 +56,7 @@ function CitiesPage() {
               <div className="card-block">
                 <div className="card-block__flex">
                   <h3>{item?.value}</h3>
-                  <img src={`${API_IMG}/${item.weather.weather[0].icon}.png`} alt="icon" />
+                  <img src={`${API_IMG}/${item?.weather?.weather[0]?.icon}.png`} alt="icon" />
                   <p>{Math.floor(item.weather?.main?.temp)}&deg;C</p>
                   <div className="card-block__info">
                     <span>{item.weather?.wind?.speed} m/s</span>

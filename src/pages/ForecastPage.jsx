@@ -11,15 +11,13 @@ import { getDailyForecast } from '../redux/weatherReducer/action';
 function ForecastPage() {
   const dispatch = useDispatch();
   const { weatherData } = useSelector((weather) => weather);
-  const lat = weatherData.weather.coord.lat;
-  const lon = weatherData.weather.coord.lon;
-  const dailyForecast = weatherData.forecast.daily;
+  const lat = weatherData.weather.coord?.lat;
+  const lon = weatherData.weather.coord?.lon;
+  const dailyForecast = weatherData.forecast?.daily;
 
-  console.log(weatherData);
   useEffect(() => {
-    if (!weatherData) return;
     dispatch(getDailyForecast(lat, lon));
-  }, [dispatch]);
+  }, [dispatch, lat, lon]);
 
   return (
     <div className="wrapper">
