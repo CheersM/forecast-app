@@ -95,7 +95,7 @@ function ForecastPage() {
             <span>{weatherData.weather.main?.pressure} mm Hg</span>
           </div>
         </div>
-        <HourlyForecastCard hourlyForecast={weatherData.forecast?.hourly} />
+        <HourlyForecastCard hourlyForecast={weatherData?.forecast?.hourly} />
         <div className="dayForecast">
           <h2>7 days forecast</h2>
           <div className="dayForecast__wrapper">

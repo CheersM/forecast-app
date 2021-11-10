@@ -12,7 +12,7 @@ function HourlyForecastCard({ hourlyForecast }) {
           ))}
         </div>
         <div className="zero">
-          {hourlyForecast.map((item) => (
+          {hourlyForecast?.map((item) => (
             <span
               key={item.dt}
               style={
