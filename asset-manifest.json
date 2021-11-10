@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/forecast-app/static/css/main.85d8976c.chunk.css",
-    "main.js": "/forecast-app/static/js/main.61a34492.chunk.js",
-    "main.js.map": "/forecast-app/static/js/main.61a34492.chunk.js.map",
+    "main.js": "/forecast-app/static/js/main.d5e82ba5.chunk.js",
+    "main.js.map": "/forecast-app/static/js/main.d5e82ba5.chunk.js.map",
     "runtime-main.js": "/forecast-app/static/js/runtime-main.44276a4e.js",
     "runtime-main.js.map": "/forecast-app/static/js/runtime-main.44276a4e.js.map",
     "static/js/2.08a08213.chunk.js": "/forecast-app/static/js/2.08a08213.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.44276a4e.js",
     "static/js/2.08a08213.chunk.js",
     "static/css/main.85d8976c.chunk.css",
-    "static/js/main.61a34492.chunk.js"
+    "static/js/main.d5e82ba5.chunk.js"
   ]
 }
