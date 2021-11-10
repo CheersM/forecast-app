@@ -7,7 +7,7 @@ function HourlyForecastCard({ hourlyForecast }) {
       <h2>Hourly forecast</h2>
       <div className="hourlyForecast-block">
         <div className="date">
-          {hourlyForecast.map((item) => (
+          {hourlyForecast?.map((item) => (
             <span key={item.dt}>{moment.unix(item.dt).format('LT')}</span>
           ))}
         </div>
