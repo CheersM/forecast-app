@@ -7,6 +7,7 @@ import { API_IMG } from '../api';
 import Button from '../components/Button';
 import DayForecastCard from '../components/DayForecastCard';
 import { getDailyForecast } from '../redux/weatherReducer/action';
+import HourlyForecastCard from '../components/HourlyForecastCard';
 
 function ForecastPage() {
   const dispatch = useDispatch();
@@ -94,11 +95,12 @@ function ForecastPage() {
             <span>{weatherData.weather.main?.pressure} mm Hg</span>
           </div>
         </div>
+        <HourlyForecastCard hourlyForecast={weatherData.forecast?.hourly} />
         <div className="dayForecast">
           <h2>7 days forecast</h2>
           <div className="dayForecast__wrapper">
-            {dailyForecast?.map((items, index) => (
-              <DayForecastCard key={index} items={items} />
+            {dailyForecast?.map((items) => (
+              <DayForecastCard key={items.dt} items={items} />
             ))}
           </div>
         </div>

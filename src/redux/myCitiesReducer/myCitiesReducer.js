@@ -5,12 +5,10 @@ const initialState = {
 const myCitiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_MY_CITY':
-      const newCity = state.myCities.filter(
-        (item, index) => index === state.myCities.indexOf(item),
-      );
+      const cities = state.myCities.filter((item) => item.value !== action.payload.value);
       return {
         ...state,
-        myCities: [action.payload].concat(newCity),
+        myCities: [action.payload].concat(cities),
       };
     case 'REMOVE_CITY':
       return {
@@ -26,7 +24,7 @@ const myCitiesReducer = (state = initialState, action) => {
       return {
         ...state,
         myCities: state.myCities.map((item) =>
-          item.value === action.payload.value ? action.payload : item,
+          item.value === action.payload.name ? { ...item, weather: action.payload } : item,
         ),
       };
     default:
